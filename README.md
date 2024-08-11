@@ -17,7 +17,7 @@ Not yet published.
 
 ## 1.B. Add precompiled jar
 
-- Download release, or build the plugin on your own.
+- Download a [release](https://github.com/Caellian/ModEnv/releases), or build the plugin on your own.
 - Move the downloaded/built jar to desired location (e.g. `<project_root>/libs/modenv-gradle-1.0.0.jar`)
 - Add the jar to buildscript classpath:
 ```groovy
