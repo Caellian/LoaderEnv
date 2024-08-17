@@ -103,14 +103,11 @@ cmake-build-*/
 # IntelliJ
 out/
 
-# mpeltonen/sbt-idea plugin
+# mpeltonen/sbt-intellij plugin
 .idea_modules/
 
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Cursive Clojure plugin
-.idea/replstate.xml
+# Plugins
+.intellijPlatform/
 
 # SonarLint plugin
 .idea/sonarlint/

@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>LoaderEnv Plugin</id>
+    <name>LoaderEnv</name>
+    <vendor email="tin.svagelj@live.com" url="https://tinsvagelj.net">Tin Švagelj</vendor>
+    <category>JVM Frameworks</category>
+    <description><![CDATA[
+<h1>LoaderEnv Plugin</h1>
+<br/>
+<b>A plugin that adds first-class support for LoaderEnv attributes</b>
+<br/>
+<b>Features</b>
+<ul>
+  <li>Disables code inspection for elements disabled at build time</li>
+  <li>Hides <em>most</em> incorrect peripheral errors</li>
+  <li>Indicates disabled elements with different highlighting</li>
+</ul>
+]]></description>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection language="JAVA" shortName="DisabledElementsInspection"
+                         displayName="Elements disabled by LoaderEnv annotations"
+                         groupName="Minecraft"
+                         enabledByDefault="true"
+                         level=""
+                         hasStaticDescription="true"
+                         implementationClass="net.tinsvagelj.mc.loaderenv.intellij.inspection.EnvironmentDisabledElementInspection"/>
+
+        <daemon.highlightInfoFilter implementation="net.tinsvagelj.mc.loaderenv.intellij.highlight.EnvironmentStateErrorFilter"/>
+        <highlightingPassFactory implementation="net.tinsvagelj.mc.loaderenv.intellij.highlight.DisabledElementHighlightPass$FactoryRegistrar"/>
+
+        <dependencySupport coordinate="net.tinsvagelj.mc:loaderenv-lib" kind="java" displayName="LoaderEnv"/>
+    </extensions>
+</idea-plugin>
